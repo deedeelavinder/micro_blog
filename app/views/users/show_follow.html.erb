@@ -21,7 +21,11 @@
     <% if @users.any? %>
       <div class="user">
         <% @users.each do |user| %>
+<<<<<<< HEAD
           <p><%= image_tag user.gravatar_url(:size => 25) %><%= link_to user, profile_path(user) %></p>
+=======
+          <p><%= image_tag user.gravatar_url(:size => 15) %> <%= link_to user, profile_path(user) %></p>
+>>>>>>> 129ee9b69ef0f7c5e2e656a3751f032908cef4ad
         <% end %>
       </div>
 		<% else %>
@@ -32,15 +36,18 @@
 
 </div>
 <div class="small-3 columns">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="panel">
-        <%= link_to 'All Profiles', profiles_path %>
-      </div>
-    </div>
+
+  <div class="panel">
+    <%= link_to 'Browse All Profiles', profiles_path %>
+  </div>
+
+  <div class="panel">
+
+    <%= render 'users/suggested' %>
+
   </div>
 </div>
-</div>
+
 
 
 
